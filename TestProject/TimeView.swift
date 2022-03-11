@@ -24,7 +24,7 @@ struct TimerView : View {
 struct TimeView : View {
     
     
-    @State var isTimerOn = true
+    @State var isTimerOn = false
     @State var selectedDate : Date = Date()
     
     @State var nowDate: Date = Date()
