@@ -14,7 +14,7 @@ struct TestProjectApp: App {
             NavigationView{
             HomeScreenView()
                     .navigationBarHidden(true)
-                    .navigationBarTitleDisplayMode(.inline)
+                    //.navigationBarTitleDisplayMode(.inline)
             }
             .accentColor(.white)
         }

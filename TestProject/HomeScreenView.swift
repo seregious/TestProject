@@ -60,8 +60,13 @@ struct HomeScreenView: View {
                 } label: {
                     Item(name: "Sleep time", icon: "bed.double", status: "Good")
                 }
-
-                Item(name: "Blood Pressure", icon: "waveform.path.ecg", status: "Bad")
+                
+                NavigationLink {
+                    TimerView()
+                } label: {
+                Item(name: "Days withous smoking", icon: "lungs", status: "Good")
+                }
+                
                 Item(name: "Body mass index", icon: "figure.walk", status: "Middle")
                 Item(name: "Cholesterol", icon: "allergens", status: "Middle")
                 
