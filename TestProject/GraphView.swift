@@ -7,38 +7,37 @@
 
 import SwiftUI
 
+import SwiftUI
+
+
+
 struct GraphView: View {
+    
+    var data : [Double]
+    let maxY : Double
+    let minY : Double
+    let averageY : Double
+    
+    let image = "heart"
+    let name = "Heart rate"
+    let info = "Here is your heart rate info"
+   
+   init () {
+       data = [71,83,66,96,102,88,115,77,86,59,63]
+       maxY = data.max() ?? 0
+       minY = data.min() ?? 0
+       averageY = (maxY + minY) / 2
+       
+   }
+    
+        
     var body: some View {
+        
 
-            ScrollView{
-                
-                VStack {
-                    HStack(alignment:.bottom){
-                        Group{
-                        Image(systemName: "heart")
-                        Text("Heart rate")
-                        }
-                        .font(.largeTitle)
-
-                        Spacer()
-                        
-                        
-                    }
-                    .padding()
-                    
-                    Text("Here is your heart rate info")
-                }
-                .modifier(header())
-
-                
-            Graphic()
-                
-                Item(name: "Minimum", icon: "arrow.down.circle", status: "\(Int(minValue))")
-                Item(name: "Maximum", icon: "arrow.up.circle", status: "\(Int(maxValue))")
-                Item(name: "Average", icon: "arrow.forward.circle", status: "\(Int(averageValue))")
-                }
+        Graphic(data: data, maxY: maxY, minY: minY)
+            .modifier(detailedView(maxY: maxY, minY: minY, name: name, image: image, info: info))
             .ignoresSafeArea()
-        }
+
 }
 
 struct Graph_Previews: PreviewProvider {
@@ -48,20 +47,11 @@ struct Graph_Previews: PreviewProvider {
 }
 
 struct Graphic : View {
-    private let data : [Double]
-    private let maxY : Double
-    private let minY : Double
-    private let lineColor : Color
-    @State private var percentage : CGFloat = 0
-    
-    init () {
-        data = [71,83,66,96,102,88,115,77,86,59,63]
-        maxY = data.max() ?? 0
-        minY = data.min() ?? 0
-        
-        lineColor = Color.red
-        
-    }
+     let data : [Double]
+     let maxY : Double
+     let minY : Double
+     let lineColor : Color  = Color.red
+    @State  var percentage : CGFloat = 0
 
     
     var body: some View {
@@ -76,16 +66,14 @@ struct Graphic : View {
         .font(.caption)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                withAnimation(.easeOut(duration: 2)) {
+                withAnimation(.easeOut(duration: 1)) {
                     percentage = 1
                 }
             }
         }
     }
-}
 
-extension Graphic {
-    private var chartView : some View {
+     var chartView : some View {
         GeometryReader {geometry in
             Path {path in
                 for index in data.indices {
@@ -129,8 +117,6 @@ extension Graphic {
             Spacer()
             Text("\(Int(minY))")
         }
-    }
-    
-
+    }    
 }
-
+}

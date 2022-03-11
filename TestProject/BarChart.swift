@@ -7,20 +7,15 @@
 
 import SwiftUI
 
-struct DataItem: Identifiable {
-    let name: String
-    let value: Double
-    let id = UUID()
-    
-    
-}
-
 struct BarChart: View {
     
     let chartData: [DataItem]
-    var maxValue: Double
-    var minValue: Double
-    var averageValue : Double
+    var maxY: Double
+    var minY: Double
+    
+    let image = "scalemass"
+    let name = "Weight"
+    let info = "Here is your weight change info"
     
     init(){
         chartData = [
@@ -33,56 +28,17 @@ struct BarChart: View {
             DataItem(name: "Jul", value: 71)
         ]
         
-        maxValue = chartData.map { $0.value }.max()!
-        minValue = chartData.map { $0.value }.min()!
-        averageValue = (maxValue + minValue)/2
+        maxY = chartData.map { $0.value }.max()!
+        minY = chartData.map { $0.value }.min()!
     }
-    
-    
-    //let emptyArray : [DataItem] = []
     
     var body: some View {
         
         
-        VStack{
-            
-            
-            VStack(alignment:.leading) {
-                
-                
-                NavigationLink(destination: HomeScreenView()) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("Back")
-                    }
-                }
-                
-                
-                
-                
-                HStack{
-                    Image(systemName: "scalemass")
-                    Text("Weight")
-                    Spacer()
-                }
-                .font(.largeTitle)
-                .padding()
-                
-                Text("Here is your weight change info")
-                    .padding()
-            }
-            .modifier(header())
-            
-            ScrollView{
                 Chart(data: chartData)
-                    .frame(height: 300)
-                
-                Item(name: "Minimum", icon: "arrow.down.circle", status: "\(Int(minValue))")
-                Item(name: "Maximum", icon: "arrow.up.circle", status: "\(Int(maxValue))")
-                Item(name: "Average", icon: "arrow.forward.circle", status: "\(Int(averageValue))")
-            }
+            .modifier(detailedView(maxY: maxY, minY: minY, name: name, image: image, info: info))
             .ignoresSafeArea()
-        }
+
     }
 }
 
@@ -159,7 +115,7 @@ struct BarView: View {
                         .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: -5)
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                withAnimation(.easeOut(duration: 2)) {
+                                withAnimation(.easeOut(duration: 1)) {
                                     startBarHeight = Int(barHeight)
                                 }
                             }

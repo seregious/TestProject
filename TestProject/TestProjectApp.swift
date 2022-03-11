@@ -11,7 +11,12 @@ import SwiftUI
 struct TestProjectApp: App {
     var body: some Scene {
         WindowGroup {
+            NavigationView{
             HomeScreenView()
+                    .navigationBarHidden(true)
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .accentColor(.white)
         }
     }
 }

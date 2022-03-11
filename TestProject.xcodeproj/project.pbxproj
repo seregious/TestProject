@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32B8E0727DB460300F445DD /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32B8E0627DB460300F445DD /* PieChartView.swift */; };
 		A346579D27D620F500A68205 /* TestProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346579C27D620F500A68205 /* TestProjectApp.swift */; };
 		A346579F27D620F500A68205 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346579E27D620F500A68205 /* HeaderView.swift */; };
 		A34657A127D620F700A68205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A34657A027D620F700A68205 /* Assets.xcassets */; };
@@ -14,10 +15,11 @@
 		A347D6C827D79DF000812ED8 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347D6C727D79DF000812ED8 /* HomeScreenView.swift */; };
 		A36BA9FA27D80FE1004F1A4E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36BA9F927D80FE1004F1A4E /* GraphView.swift */; };
 		A36BA9FC27D817E4004F1A4E /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36BA9FB27D817E4004F1A4E /* BarChart.swift */; };
-		A36BA9FE27DA4A90004F1A4E /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36BA9FD27DA4A90004F1A4E /* RectangleView.swift */; };
+		A36BA9FE27DA4A90004F1A4E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36BA9FD27DA4A90004F1A4E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A32B8E0627DB460300F445DD /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		A346579927D620F500A68205 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A346579C27D620F500A68205 /* TestProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectApp.swift; sourceTree = "<group>"; };
 		A346579E27D620F500A68205 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -26,7 +28,7 @@
 		A347D6C727D79DF000812ED8 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		A36BA9F927D80FE1004F1A4E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		A36BA9FB27D817E4004F1A4E /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
-		A36BA9FD27DA4A90004F1A4E /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		A36BA9FD27DA4A90004F1A4E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 				A346579E27D620F500A68205 /* HeaderView.swift */,
 				A36BA9F927D80FE1004F1A4E /* GraphView.swift */,
 				A36BA9FB27D817E4004F1A4E /* BarChart.swift */,
-				A36BA9FD27DA4A90004F1A4E /* RectangleView.swift */,
+				A32B8E0627DB460300F445DD /* PieChartView.swift */,
+				A36BA9FD27DA4A90004F1A4E /* Extensions.swift */,
 				A34657A027D620F700A68205 /* Assets.xcassets */,
 				A34657A227D620F700A68205 /* Preview Content */,
 			);
@@ -151,10 +154,11 @@
 			files = (
 				A36BA9FA27D80FE1004F1A4E /* GraphView.swift in Sources */,
 				A347D6C827D79DF000812ED8 /* HomeScreenView.swift in Sources */,
-				A36BA9FE27DA4A90004F1A4E /* RectangleView.swift in Sources */,
+				A36BA9FE27DA4A90004F1A4E /* Extensions.swift in Sources */,
 				A346579F27D620F500A68205 /* HeaderView.swift in Sources */,
 				A36BA9FC27D817E4004F1A4E /* BarChart.swift in Sources */,
 				A346579D27D620F500A68205 /* TestProjectApp.swift in Sources */,
+				A32B8E0727DB460300F445DD /* PieChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
